@@ -35,3 +35,8 @@ Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+// Redirect /home (default Laravel post-login redirect) to blog
+Route::get('/home', function () {
+    return redirect()->route('blog.index');
+})->name('home.redirect');
