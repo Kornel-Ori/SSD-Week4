@@ -1,8 +1,161 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.bunny.net/css?family=Nunito:400,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
-// Variables
-@import 'variables';
+// ── Custom Variables ──────────────────────────────────────────
+$primary:            #6c63ff;
+$secondary:          #f3f0ff;
+$body-bg:            #f5f6fa;
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base:     0.95rem;
+$line-height-base:   1.7;
+$border-radius:      0.6rem;
+$border-radius-lg:   1rem;
 
 // Bootstrap
+@import 'variables';
 @import 'bootstrap/scss/bootstrap';
+
+// ── Navbar ────────────────────────────────────────────────────
+.blog-navbar {
+    background: linear-gradient(135deg, #6c63ff 0%, #8b5cf6 100%);
+    padding: 0.75rem 0;
+
+    .navbar-brand {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: -0.3px;
+    }
+
+    .nav-link {
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.85rem !important;
+        border-radius: 0.5rem;
+        transition: background 0.2s ease, color 0.2s ease;
+
+        &:hover, &.active {
+            background: rgba(255,255,255,0.15);
+            color: #fff !important;
+        }
+    }
+}
+
+// ── Cards ─────────────────────────────────────────────────────
+.blog-post-card {
+    border: none;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 2px 16px rgba(108, 99, 255, 0.08);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+        box-shadow: 0 6px 24px rgba(108, 99, 255, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .blog-post-image {
+        border-radius: $border-radius-lg $border-radius-lg 0 0;
+        max-height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+// ── Buttons ───────────────────────────────────────────────────
+.btn-primary {
+    background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+    border: none;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+        background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+        border: none;
+    }
+}
+
+.btn-outline-primary {
+    border-color: #6c63ff;
+    color: #6c63ff;
+    font-weight: 600;
+
+    &:hover {
+        background: #6c63ff;
+        border-color: #6c63ff;
+    }
+}
+
+// ── Page Hero ─────────────────────────────────────────────────
+.page-hero {
+    background: linear-gradient(135deg, #6c63ff 0%, #8b5cf6 60%, #a78bfa 100%);
+    clip-path: ellipse(100% 90% at 50% 10%);
+    padding-bottom: 4rem !important;
+}
+
+// ── Comments ──────────────────────────────────────────────────
+.comment-item {
+    background: #f5f6fa;
+    border-left: 4px solid #6c63ff;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #ede9fe;
+    }
+}
+
+// ── Tech badges (About page) ──────────────────────────────────
+.tech-badge {
+    background: #f5f6fa;
+    transition: background 0.2s, transform 0.2s;
+
+    &:hover {
+        background: #ede9fe;
+        transform: translateY(-3px);
+    }
+}
+
+.text-purple { color: #7c3aed; }
+
+// ── Footer ────────────────────────────────────────────────────
+.blog-footer {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+
+    a:hover {
+        color: #a78bfa !important;
+    }
+}
+
+// ── Post body text ────────────────────────────────────────────
+.post-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #374151;
+}
+
+// ── Form controls ─────────────────────────────────────────────
+.form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.2);
+}
+
+// ── Alerts ────────────────────────────────────────────────────
+.alert-success {
+    background: #ede9fe;
+    border-color: #6c63ff;
+    color: #4c1d95;
+}
+
+// ── Pagination ────────────────────────────────────────────────
+.pagination .page-link {
+    color: #6c63ff;
+    border-radius: 0.4rem;
+    margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+    background: #6c63ff;
+    border-color: #6c63ff;
+}
